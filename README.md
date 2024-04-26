@@ -1,6 +1,6 @@
 ## Welcome
 
-This package extends the functionality of `{rsurvecto}` . 
+This package extends the functionality of `{rsurveycto}` . 
 
 ## Why
 
