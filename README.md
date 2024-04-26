@@ -1,12 +1,12 @@
 ## Welcome
 
-This package extends the functionality of `{rsurvecto}`. 
+This package extends the functionality of `{rsurvecto}` . 
 
 ## Why
 
 In R, it's nice to work with factor variables and data labels. Those things are already coded into SurveyCTO. It should be dead easy to get back data frames with the same structure as you coded into SurveyCTO. 
 
-Enter {`sctofactorgen`}.
+That's what `{sctofactorgen}` does.
 
 ## How it works
 
@@ -16,7 +16,11 @@ The CSV data files do not contain labels that correspond to the text of question
 
 ## What it does
 
-This package creates factors for single- and multi-select response questions. It creates variable labels corresponding to the question label on the survey form. The first version of this package does not yet handle translations or repeated question groups. It only anticipates a single language with a single question label and a single value label for every question on the survey. Users are encouraged to read the Rsurveycto package to learn more about the authentication process for accessing survey data. Users are also encouraged to practice downloading the questionnaire forms and survey data from SurvyeCTO's server and desktop software to learn the structure of those files. 
+This package creates factors for single- and multi-select response questions. It creates variable labels corresponding to the question label on the survey form. 
+
+The first version of this package does not yet handle translations or repeated question groups. It only anticipates a single language with a single question label and a single value label for every question on the survey. 
+
+Users are encouraged to read the `{rsurveycto}` package to learn more about the authentication process for accessing survey data. Users are also encouraged to practice downloading the questionnaire forms and survey data from SurveyCTO's server and desktop software to learn the structure of those files. 
 
 ## The contribution
 
