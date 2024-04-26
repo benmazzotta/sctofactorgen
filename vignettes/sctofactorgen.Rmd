@@ -1,0 +1,183 @@
+---
+title: "sctofactorgen"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{sctofactorgen}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(sctofactorgen)
+library(tidyverse)
+```
+
+
+# SurveyCTO Factor Generator
+
+This package wrangles categorical variables for SurveyCTO. In the language of R, categorical variables are factors with levels and labels. 
+
+## Motivation
+
+SurveyCTO is one of the most widely used survey platforms in the world. Based on ODK, it helps users to collect clean and tidy data efficiently. 
+
+Its desktop software integrates nicely with Stata, Excel, and SPSS.
+
+This package offers direct access to labeled survey datasets through the SurveyCTO API, rather than through a workaround such as importing SPSS or Stata files into R. 
+
+## Pre-flight check
+
+You will need access to a SurveyCTO server for this to work. Store these in a plaintext file. 
+
+- servername
+- username
+- password
+
+See the `{rsurveycto}` package for details. 
+
+## API access
+
+The {rsurveycto} package offers several methods to pull data and forms from the server via API. The first one requires and authorization block. Note that we store it in memory for this session.
+
+```{r authorize, warning= F, message = F}
+library(rsurveycto)
+auth <- scto_auth("./auth_details")
+```
+
+This function returns a boolean TRUE to confirm that you've saved your authentication block correctly. 
+
+```{r validate the authentication}
+check_scto_api()
+```
+
+
+
+Which form do I need?
+
+```{r}
+cat("How many forms do we have on the server?")
+scto_catalog(auth) |> nrow()
+
+cat("Which one is for github?")
+scto_catalog(auth) |> filter(str_detect(title, "github"))
+
+```
+
+
+
+
+## Labels with {sctofactorgen}
+
+
+Everything else can be done with `{sctofactorgen}`. 
+
+Load the response data.
+
+```{r}
+df <- scto_responses(.formid = "demo_for_github") 
+glimpse(df[,1:20])
+```
+
+Load the questionnaire. 
+
+
+```{r, message = F}
+qnr <- scto_form("demo_for_github")
+names(qnr)
+lapply(qnr, class)
+```
+
+
+Read the choices.
+
+
+```{r}
+df_choices <- read_choices(qnr) |> glimpse()
+```
+
+
+Read the questions.
+
+```{r}
+df_questions <- read_questions(qnr) |> glimpse()
+```
+
+
+Attach variable labels to single selects.
+
+```{r}
+cat("Labeling single select questions, question text as the attribute `label`.")
+df <- singsel_label(df, thefields = df_questions)
+```
+
+
+Attach variable labels to multi selects. 
+```{r}
+cat("Labeling multiple select questions, question text and response value as the attribute `label`.")
+df <- multisel_label(df, thefields = df_questions, thechoices = df_choices)
+
+```
+
+
+Convert single selects to factor levels. 
+```{r}
+cat("Converting single select questions to factors.")
+df <- singsel_asfactor(df, thefields = df_questions, thechoices = df_choices)
+```
+
+Convert multi selects to integers.
+```{r}
+cat("Converting multi select questions to integers.")
+df <- multisel_levels(df, thefields = df_questions, thechoices = df_choices)
+
+```
+
+Attach variable labels to single selects.
+
+```{r}
+cat("Labeling single select questions, question text as the attribute `label`.")
+df <- singsel_label(df, thefields = df_questions)
+```
+
+
+Attach variable labels to multi selects. 
+```{r}
+cat("Labeling multiple select questions, question text and response value as the attribute `label`.")
+df <- multisel_label(df, thefields = df_questions, thechoices = df_choices)
+
+```
+
+
+## Explore 
+
+Nice and tidy.
+
+```{r inspect results}
+glimpse(df)
+```
+
+
+```{r all the variable labels}
+labelled::get_variable_labels(df) |> enframe() |> unnest(value) |> knitr::kable()
+```
+
+```{r}
+str(df)
+```
+
+
+```{r}
+select(df, where(is.factor)) |> map(~janitor::tabyl(.) |> janitor::adorn_pct_formatting() |> arrange(-n))
+select(df, where(is.numeric)) |> map(~janitor::tabyl(.) |> janitor::adorn_pct_formatting())
+```
+
+
+
+&squf;

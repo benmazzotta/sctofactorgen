@@ -25,5 +25,9 @@ Imports:
     tibble,
     tidyr
 Suggests: 
+    knitr,
+    rmarkdown,
     tidyverse
 Roxygen: list(markdown = TRUE)
+VignetteBuilder: knitr
+URL: https://benmazzotta.github.io/sctofactorgen/
