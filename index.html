@@ -53,8 +53,40 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9">
-This package extends the functionality of Rsurveycto. That package facilitates data download via SurveyCTO's API. The files available through that package are (1) survey data and (2) forms for data collection. The CSV data files do not contain labels that correspond to the text of questions and responses from the form. This package creates factors for single- and multi-select response questions. It creates variable labels corresponding to the question label on the survey form. The first version of this package does not yet handle translations or repeated question groups. It only anticipates a single language with a single question label and a single value label for every question on the survey. Users are encouraged to read the Rsurveycto package to learn more about the authentication process for accessing survey data. Users are also encouraged to practice downloading the questionnaire forms and survey data from SurvyeCTO's server and desktop software to learn the structure of those files. This package is intended to improve on the existing workflows in R. R users can obtain CSV files with the Rsurveycto package. They can download unlabeled CSV and Excel scripts that require custom R code to label and clean. They can download labeled data files in other formats such as SPSS and Stata. Due to minor differences in variable naming and labeling conventions between these packages and R, it is preferable to have the labeled data files created directly in R, without converting formats.
+  <main id="main" class="col-md-9"><div class="section level2">
+<h2 id="welcome">Welcome<a class="anchor" aria-label="anchor" href="#welcome"></a>
+</h2>
+<p>This package extends the functionality of <code>{rsurvecto}</code>.</p>
+</div>
+<div class="section level2">
+<h2 id="why">Why<a class="anchor" aria-label="anchor" href="#why"></a>
+</h2>
+<p>In R, it’s nice to work with factor variables and data labels. Those things are already coded into SurveyCTO. It should be dead easy to get back data frames with the same structure as you coded into SurveyCTO.</p>
+<p>Enter {<code>sctofactorgen</code>}.</p>
+</div>
+<div class="section level2">
+<h2 id="how-it-works">How it works<a class="anchor" aria-label="anchor" href="#how-it-works"></a>
+</h2>
+<p><a href="https://agency-fund.github.io/rsurveycto/" class="external-link">rsurveycto</a> facilitates data download via SurveyCTO’s API. The files available through that package are (1) survey data and (2) forms for data collection.</p>
+<p>The CSV data files do not contain labels that correspond to the text of questions and responses from the form. Yet we can download precisely the labels and factor levels we need via the same API.</p>
+</div>
+<div class="section level2">
+<h2 id="what-it-does">What it does<a class="anchor" aria-label="anchor" href="#what-it-does"></a>
+</h2>
+<p>This package creates factors for single- and multi-select response questions. It creates variable labels corresponding to the question label on the survey form. The first version of this package does not yet handle translations or repeated question groups. It only anticipates a single language with a single question label and a single value label for every question on the survey. Users are encouraged to read the Rsurveycto package to learn more about the authentication process for accessing survey data. Users are also encouraged to practice downloading the questionnaire forms and survey data from SurvyeCTO’s server and desktop software to learn the structure of those files.</p>
+</div>
+<div class="section level2">
+<h2 id="the-contribution">The contribution<a class="anchor" aria-label="anchor" href="#the-contribution"></a>
+</h2>
+<p>This package is intended to improve on the existing workflows in R. Without this package, R users can obtain CSV files with the Rsurveycto package. They can download unlabeled CSV and Excel scripts that require custom R code to label and clean. They can download labeled data files in other formats such as SPSS and Stata.</p>
+<p>Due to minor differences in variable naming and labeling conventions between these packages and R, it is preferable to have the labeled data files created directly in R, without converting formats.</p>
+</div>
+<div class="section level2">
+<h2 id="enjoy">Enjoy<a class="anchor" aria-label="anchor" href="#enjoy"></a>
+</h2>
+<p>Thanks for checking out the package!</p>
+</div>
+
   </main><aside class="col-md-3"><div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
