@@ -1,4 +1,4 @@
-## Welcome
+## Welcome  <img src="man/figures/logo.png" align="right" />
 
 This package extends the functionality of `{rsurveycto}` . 
 
