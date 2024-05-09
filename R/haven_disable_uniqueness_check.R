@@ -5,6 +5,7 @@
 #'
 #' @param x an object with a labels attribute
 #'
+#'@importFrom haven validate_labelled
 #' @return the same object
 #' @export
 #'
