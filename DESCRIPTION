@@ -29,7 +29,9 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
+    testthat (>= 3.0.0),
     tidyverse
 Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr
 URL: https://benmazzotta.github.io/sctofactorgen/
+Config/testthat/edition: 3
