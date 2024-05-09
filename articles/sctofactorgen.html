@@ -127,19 +127,21 @@ your authentication block correctly.</p>
 <span><span class="co">#&gt; How many forms do we have on the server?</span></span>
 <span><span class="fu"><a href="https://agency-fund.github.io/rsurveycto/reference/scto_meta.html" class="external-link">scto_catalog</a></span><span class="op">(</span><span class="va">auth</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Reading metadata for server `<span style="color: #FFAF00;">sctofactorgen</span>`.</span></span>
-<span><span class="co">#&gt; [1] 1</span></span>
+<span><span class="co">#&gt; [1] 2</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Which one is for github?"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Which one is for github?</span></span>
 <span><span class="fu"><a href="https://agency-fund.github.io/rsurveycto/reference/scto_meta.html" class="external-link">scto_catalog</a></span><span class="op">(</span><span class="va">auth</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html" class="external-link">str_detect</a></span><span class="op">(</span><span class="va">title</span>, <span class="st">"github"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Reading metadata for server `<span style="color: #FFAF00;">sctofactorgen</span>`.</span></span>
 <span><span class="co">#&gt; Key: &lt;type, id, title, version, group_id, group_title&gt;</span></span>
-<span><span class="co">#&gt;      type              id           title    version group_id</span></span>
-<span><span class="co">#&gt;    &lt;char&gt;          &lt;char&gt;          &lt;char&gt;      &lt;num&gt;    &lt;int&gt;</span></span>
-<span><span class="co">#&gt; 1:   form demo_for_github demo_for_github 2404261415        1</span></span>
+<span><span class="co">#&gt;      type                     id                  title    version group_id</span></span>
+<span><span class="co">#&gt;    &lt;char&gt;                 &lt;char&gt;                 &lt;char&gt;      &lt;num&gt;    &lt;int&gt;</span></span>
+<span><span class="co">#&gt; 1:   form        demo_for_github        demo_for_github 2404261415        1</span></span>
+<span><span class="co">#&gt; 2:   form github_with_dup_labels github_with_dup_labels 2405082252        1</span></span>
 <span><span class="co">#&gt;                                    group_title</span></span>
 <span><span class="co">#&gt;                                         &lt;char&gt;</span></span>
-<span><span class="co">#&gt; 1: The root or home group (outside all groups)</span></span></code></pre></div>
+<span><span class="co">#&gt; 1: The root or home group (outside all groups)</span></span>
+<span><span class="co">#&gt; 2: The root or home group (outside all groups)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="labels-with-sctofactorgen">Labels with {sctofactorgen}<a class="anchor" aria-label="anchor" href="#labels-with-sctofactorgen"></a>
