@@ -2,6 +2,10 @@
 
 This package extends the functionality of `{rsurveycto}` . 
 
+## Status
+
+This package is NOT actively maintained since January 2025, due to changes in API access policies at SurveyCTO.
+
 ## Why
 
 In R, it's nice to work with factor variables and data labels. Those things are already coded into SurveyCTO. It should be dead easy to get back data frames with the same structure as you coded into SurveyCTO. 
