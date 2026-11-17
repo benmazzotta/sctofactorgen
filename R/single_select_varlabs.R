@@ -13,7 +13,7 @@
 singsel_label <-
   ## Two arguments: the data frame, the fields
   function(surveydata, thefields) {
-    cat("Prepare a list of variable labels.\n")
+
     ## Filter the non-empty labels and store them a list.
     varlabs <- select(thefields, name, label) |> filter(label !="") |>
       deframe() |> as.list()

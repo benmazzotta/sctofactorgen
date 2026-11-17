@@ -23,6 +23,14 @@ read_choices <-
       ## Remove redundant naming fields
       rename_with(~str_remove(., "choices\\.")) |>
       ## Clean the names so it plays nicely with other software.
-      clean_names()
+      clean_names() |>
+      rename_choice_value()
   }
 
+
+# XLSForms use name; API definitions use value.
+rename_choice_value <- function(x) {
+  if (!"value" %in% names(x) && "name" %in% names(x))
+    names(x)[names(x) == "name"] <- "value"
+  x
+}

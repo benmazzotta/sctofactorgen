@@ -4,7 +4,7 @@
 \alias{check_scto_api}
 \title{Check the SurveyCTO API has been authorized and stored as \code{auth}}
 \usage{
-check_scto_api(.auth = auth)
+check_scto_api(.auth = NULL)
 }
 \arguments{
 \item{.auth}{an authorization block from \code{{rsurveycto::scto_auth}}}

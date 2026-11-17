@@ -4,7 +4,7 @@
 \alias{scto_responses}
 \title{Get survey data}
 \usage{
-scto_responses(.formid = formid, .auth = auth)
+scto_responses(.formid, .auth)
 }
 \arguments{
 \item{.formid}{a character string that identifies the SurveyCTO form}

@@ -12,8 +12,8 @@ wrappers remain available for eligible users; live verification is separate work
 
 ## Today: November 17, 2026
 
-First resolve [#10: the credential-dependent pkgdown build](https://github.com/benmazzotta/sctofactorgen/issues/10)
-so documentation checks can run without server access.
+[#10: the credential-dependent pkgdown build](https://github.com/benmazzotta/sctofactorgen/issues/10)
+is resolved by merged PR #9; documentation builds no longer require server access.
 
 1. Review the existing local maintenance work under [#2](https://github.com/benmazzotta/sctofactorgen/issues/2).
    Check the offline import and labelling workflow, preserve unrelated local edits,
@@ -35,8 +35,8 @@ steps 1 and 2; defer feature expansion and publishing a release.
 
 | Order | Work | Priority | Current state | Target |
 | --- | --- | --- | --- | --- |
-| 0 | [#10 Offline pkgdown build and CI setup](https://github.com/benmazzotta/sctofactorgen/issues/10) | High | Fix in PR #9; hosted verification pending | 0.1.2 |
-| 1 | [#2 Offline maintenance baseline](https://github.com/benmazzotta/sctofactorgen/issues/2) | High | Local implementation; review and verification pending | 0.1.2 |
+| 0 | [#10 Offline pkgdown build and CI setup](https://github.com/benmazzotta/sctofactorgen/issues/10) | High | Merged in PR #9; hosted check passed | 0.1.2 |
+| 1 | [#2 Offline maintenance baseline](https://github.com/benmazzotta/sctofactorgen/issues/2) | High | Implemented on codex/offline-maintenance; review pending | 0.1.2 |
 | 2 | [#1 Reused labels](https://github.com/benmazzotta/sctofactorgen/issues/1) | High | Local fix and tests; close after merge | 0.1.2 |
 | 3 | [#3 Form validation and consistent list parsing](https://github.com/benmazzotta/sctofactorgen/issues/3) | High | Ready; build on local baseline | 0.1.2 |
 | 4 | [#4 Raw multiselect expansion](https://github.com/benmazzotta/sctofactorgen/issues/4) | Medium | Scoped; after baseline | 0.2.0 |
@@ -62,7 +62,8 @@ steps 1 and 2; defer feature expansion and publishing a release.
 - Credential/session files are excluded from artifacts and public changes.
 
 Current evidence from the local working tree: 23 passing assertions and full
-R CMD check with 0 errors, 0 warnings, one environment time-verification note.
+R CMD check with 0 errors, 0 warnings and 0 notes (remote clock verification
+disabled). Optional rsurveycto was unavailable locally; API behavior is unverified.
 These are local results, not evidence of a merged release or live API compatibility.
 Schema validation and real-export verification are still pending.
 

@@ -4,3 +4,7 @@
 .Ruserdata
 inst/doc
 docs
+
+vignettes/auth_details
+*.Rcheck/
+*.tar.gz
