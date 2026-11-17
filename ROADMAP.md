@@ -12,6 +12,9 @@ wrappers remain available for eligible users; live verification is separate work
 
 ## Today: November 17, 2026
 
+First resolve [#10: the credential-dependent pkgdown build](https://github.com/benmazzotta/sctofactorgen/issues/10)
+so documentation checks can run without server access.
+
 1. Review the existing local maintenance work under [#2](https://github.com/benmazzotta/sctofactorgen/issues/2).
    Check the offline import and labelling workflow, preserve unrelated local edits,
    exclude credential/session files, and prepare the maintenance changes for review.
@@ -32,6 +35,7 @@ steps 1 and 2; defer feature expansion and publishing a release.
 
 | Order | Work | Priority | Current state | Target |
 | --- | --- | --- | --- | --- |
+| 0 | [#10 Offline pkgdown build and CI setup](https://github.com/benmazzotta/sctofactorgen/issues/10) | High | Fix in PR #9; hosted verification pending | 0.1.2 |
 | 1 | [#2 Offline maintenance baseline](https://github.com/benmazzotta/sctofactorgen/issues/2) | High | Local implementation; review and verification pending | 0.1.2 |
 | 2 | [#1 Reused labels](https://github.com/benmazzotta/sctofactorgen/issues/1) | High | Local fix and tests; close after merge | 0.1.2 |
 | 3 | [#3 Form validation and consistent list parsing](https://github.com/benmazzotta/sctofactorgen/issues/3) | High | Ready; build on local baseline | 0.1.2 |

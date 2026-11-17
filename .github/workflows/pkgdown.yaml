@@ -3,8 +3,28 @@
 on:
   push:
     branches: [main, master]
+    paths:
+      - '.github/workflows/pkgdown.yaml'
+      - 'DESCRIPTION'
+      - 'NAMESPACE'
+      - 'R/**'
+      - 'man/**'
+      - 'vignettes/**'
+      - 'pkgdown/**'
+      - '_pkgdown.yml'
+      - '*.md'
   pull_request:
     branches: [main, master]
+    paths:
+      - '.github/workflows/pkgdown.yaml'
+      - 'DESCRIPTION'
+      - 'NAMESPACE'
+      - 'R/**'
+      - 'man/**'
+      - 'vignettes/**'
+      - 'pkgdown/**'
+      - '_pkgdown.yml'
+      - '*.md'
   release:
     types: [published]
   workflow_dispatch:
@@ -14,9 +34,10 @@ name: pkgdown
 jobs:
   pkgdown:
     runs-on: ubuntu-latest
-    # Only restrict concurrency for non-PR jobs
+    timeout-minutes: 15
     concurrency:
-      group: pkgdown-${{ github.event_name != 'pull_request' || github.run_id }}
+      group: pkgdown-${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     permissions:
@@ -34,6 +55,10 @@ jobs:
         with:
           extra-packages: any::pkgdown, local::.
           needs: website
+          # Install runtime dependencies and website tools, not every Suggests.
+          dependencies: '"hard"'
+          # Preserve downloads even if a later rendering step fails.
+          cache: always
 
       - name: Build site
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
