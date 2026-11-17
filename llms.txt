@@ -1,0 +1,105 @@
+## Welcome ![](reference/figures/logo.png)
+
+This package extends the functionality of
+[rsurveycto](https://agency-fund.github.io/rsurveycto/) .
+
+## Status
+
+This package is NOT actively maintained since January 2025, due to
+changes in API access policies at SurveyCTO.
+
+## Why
+
+In R, it’s nice to work with factor variables and data labels. Those
+things are already coded into SurveyCTO. It should be dead easy to get
+back data frames with the same structure as you coded into SurveyCTO.
+
+That’s what
+[sctofactorgen](https://benmazzotta.github.io/sctofactorgen/) does.
+
+## How it works
+
+[rsurveycto](https://agency-fund.github.io/rsurveycto/) facilitates data
+download via SurveyCTO’s API. The files available through that package
+are (1) survey data and (2) forms for data collection.
+
+The CSV data files do not contain labels that correspond to the text of
+questions and responses from the form. Yet we can download precisely the
+labels and factor levels we need via the same API.
+
+## What it does
+
+This package creates factors for single- and multi-select response
+questions. It creates variable labels corresponding to the question
+label on the survey form.
+
+The first version of this package does not yet handle translations or
+repeated question groups. It only anticipates a single language with a
+single question label and a single value label for every question on the
+survey.
+
+Users are encouraged to read the
+[rsurveycto](https://agency-fund.github.io/rsurveycto/) package to learn
+more about the authentication process for accessing survey data. Users
+are also encouraged to practice downloading the questionnaire forms and
+survey data from SurveyCTO’s server and desktop software to learn the
+structure of those files.
+
+## The contribution
+
+This package is intended to improve on the existing workflows in R.
+Without this package, R users can obtain CSV files with the Rsurveycto
+package. They can download unlabeled CSV and Excel scripts that require
+custom R code to label and clean. They can download labeled data files
+in other formats such as SPSS and Stata.
+
+Due to minor differences in variable naming and labeling conventions
+between these packages and R, it is preferable to have the labeled data
+files created directly in R, without converting formats.
+
+## Enjoy
+
+Thanks for checking out the package!
+
+# Package index
+
+## All functions
+
+- [`check_scto_api()`](https://benmazzotta.github.io/sctofactorgen/reference/check_scto_api.md)
+  :
+
+  Check the SurveyCTO API has been authorized and stored as `auth`
+
+- [`multisel_label()`](https://benmazzotta.github.io/sctofactorgen/reference/multisel_label.md)
+  : Apply variable labels to multiselects
+
+- [`multisel_levels()`](https://benmazzotta.github.io/sctofactorgen/reference/multisel_levels.md)
+  : Convert multi select variables to factors
+
+- [`read_choices()`](https://benmazzotta.github.io/sctofactorgen/reference/read_choices.md)
+  : Extract response choices from a form definition
+
+- [`read_questions()`](https://benmazzotta.github.io/sctofactorgen/reference/read_questions.md)
+  : Read the questions from SurveyCTO fields
+
+- [`scto_form()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_form.md)
+  : Get survey forms
+
+- [`scto_responses()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_responses.md)
+  : Get survey data
+
+- [`singsel_asfactor()`](https://benmazzotta.github.io/sctofactorgen/reference/singsel_asfactor.md)
+  : Convert single select variables to factors
+
+- [`singsel_label()`](https://benmazzotta.github.io/sctofactorgen/reference/singsel_label.md)
+  : Label single select questions
+
+- [`validate_labelled()`](https://benmazzotta.github.io/sctofactorgen/reference/validate_labelled.md)
+  : Title
+
+# Articles
+
+### All vignettes
+
+- [Label downloaded SurveyCTO
+  data](https://benmazzotta.github.io/sctofactorgen/articles/sctofactorgen.md):
