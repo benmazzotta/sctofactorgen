@@ -20,7 +20,7 @@ a tibble with variable labels for each column of a multiple_select question
 Multiselects are complicated. They store responses to questions across multiple columns.
 This function applies one label to each column, indicating both the question text (label) and response (label). These character strings are concatenated with a tilde \code{~} separator.
 To do this, we process the labels first and then apply them to the columns of the response data.
-At some point, I would like to have the ability to provide the user the choice whether these are dummy variables \verb{\{0,1\}}, missing values, \verb{\{NA, 1\}}, or booleans \verb{\{F, T\}}.
+Use \code{\link[=multisel_levels]{multisel_levels()}} to choose integer, logical, or missing-preserving indicators.
 }
 \examples{
 NULL

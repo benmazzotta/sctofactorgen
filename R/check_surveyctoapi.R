@@ -6,6 +6,6 @@
 #' @export
 #'
 #' @examples NULL
-check_scto_api <- function(.auth = auth) {
-  are_equal(class(.auth), "scto_auth")
+check_scto_api <- function(.auth = NULL) {
+  inherits(.auth, "scto_auth")
 }

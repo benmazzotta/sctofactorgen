@@ -7,3 +7,9 @@
 ^docs$
 ^pkgdown$
 ^\.github$
+
+^vignettes/auth_details$
+^\.RData$
+^\.Rhistory$
+^ROADMAP\.md$
+^CONTRIBUTING\.md$

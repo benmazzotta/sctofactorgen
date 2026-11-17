@@ -2,19 +2,16 @@
 % Please edit documentation in R/haven_disable_uniqueness_check.R
 \name{validate_labelled}
 \alias{validate_labelled}
-\title{Title}
+\title{Validate a labelled vector}
 \usage{
 validate_labelled(x)
 }
 \arguments{
-\item{x}{an object with a labels attribute}
+\item{x}{A labelled vector.}
 }
 \value{
-the same object
+The validated vector.
 }
 \description{
-Title
-}
-\examples{
-NULL
+Compatibility helper. Validation follows the public haven constructor.
 }

@@ -11,10 +11,13 @@ singsel_asfactor(surveydata, thefields, thechoices)
 
 \item{thefields}{a tibble with survey fields as processed by \code{read_questions}}
 
-\item{thechoices}{a tibble with choices as processed by \code{read_choices}}
+\item{thechoices}{a tibble with choices as processed by \code{read_choices}
+
+Duplicate display labels become a single factor level, as in base R.
+Unknown response codes produce an error.}
 }
 \value{
-a tibble with survey data where single select variables have variable labels in the \code{label} attribute
+Survey data with single select factors in form choice order.
 }
 \description{
 Convert single select variables to factors

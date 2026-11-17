@@ -2,7 +2,7 @@
 % Please edit documentation in R/multi_select_levels.R
 \name{multisel_levels}
 \alias{multisel_levels}
-\title{Convert multi select variables to factors}
+\title{Convert expanded multi select indicators}
 \usage{
 multisel_levels(surveydata, thefields, thechoices, na_value = "zero")
 }
@@ -16,10 +16,10 @@ multisel_levels(surveydata, thefields, thechoices, na_value = "zero")
 \item{na_value}{a character string, one of \code{"zero"}, \code{"boolean"}, or \code{"NA"}}
 }
 \value{
-a tibble with survey data where single select variables have variable labels in the \code{label} attribute
+Survey data with integer or logical multiselect indicators, preserving variable labels.
 }
 \description{
-Convert multi select variables to factors
+Convert expanded multi select indicators
 }
 \examples{
 NULL
