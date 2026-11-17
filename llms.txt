@@ -1,12 +1,44 @@
 ## Welcome ![](reference/figures/logo.png)
 
-This package extends the functionality of
-[rsurveycto](https://agency-fund.github.io/rsurveycto/) .
+This package labels SurveyCTO exports locally and optionally works with
+[rsurveycto](https://agency-fund.github.io/rsurveycto/).
 
 ## Status
 
-This package is NOT actively maintained since January 2025, due to
-changes in API access policies at SurveyCTO.
+Maintenance now focuses on an offline workflow that requires no paid API
+access. Download an Excel form definition and a CSV export with raw
+choice codes from SurveyCTO, then label them locally:
+
+``` r
+
+library(sctofactorgen)
+form <- scto_read_form("questionnaire.xlsx")
+data <- scto_read_csv("responses.csv")
+fields <- read_questions(form)
+choices <- read_choices(form)
+data <- singsel_label(data, fields)
+data <- singsel_asfactor(data, fields, choices)
+data <- multisel_label(data, fields, choices)
+data <- multisel_levels(data, fields, choices, na_value = "zero")
+```
+
+See the
+[roadmap](https://benmazzotta.github.io/sctofactorgen/ROADMAP.md) for
+priorities and current limitations.
+
+Use the matching form version. Duplicate display labels become a single
+factor level, as in base R. Multiselect conversion expects expanded
+`question_code` columns; `na_value = "NA"` preserves missing indicators
+and `"boolean"` returns logical values. The default `"zero"` treats
+missing indicators as unselected, including skipped questions.
+
+`rsurveycto` is optional and only needed for API downloads on eligible
+accounts. Pass credentials explicitly to
+[`scto_form()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_form.md)
+and
+[`scto_responses()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_responses.md).
+Automated tests require neither credentials nor a server. Live API
+access has not been verified as part of this maintenance.
 
 ## Why
 
@@ -24,8 +56,11 @@ download via SurveyCTO’s API. The files available through that package
 are (1) survey data and (2) forms for data collection.
 
 The CSV data files do not contain labels that correspond to the text of
-questions and responses from the form. Yet we can download precisely the
-labels and factor levels we need via the same API.
+questions and responses from the form. The Excel form definition
+supplies the question labels and choice lists. These can be read locally
+with
+[`scto_read_form()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_read_form.md),
+or downloaded through the API when available.
 
 ## What it does
 
@@ -74,7 +109,7 @@ Thanks for checking out the package!
   : Apply variable labels to multiselects
 
 - [`multisel_levels()`](https://benmazzotta.github.io/sctofactorgen/reference/multisel_levels.md)
-  : Convert multi select variables to factors
+  : Convert expanded multi select indicators
 
 - [`read_choices()`](https://benmazzotta.github.io/sctofactorgen/reference/read_choices.md)
   : Extract response choices from a form definition
@@ -84,6 +119,12 @@ Thanks for checking out the package!
 
 - [`scto_form()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_form.md)
   : Get survey forms
+
+- [`scto_read_csv()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_read_csv.md)
+  : Read downloaded SurveyCTO responses
+
+- [`scto_read_form()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_read_form.md)
+  : Read a downloaded SurveyCTO form
 
 - [`scto_responses()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_responses.md)
   : Get survey data
@@ -95,7 +136,7 @@ Thanks for checking out the package!
   : Label single select questions
 
 - [`validate_labelled()`](https://benmazzotta.github.io/sctofactorgen/reference/validate_labelled.md)
-  : Title
+  : Validate a labelled vector
 
 # Articles
 

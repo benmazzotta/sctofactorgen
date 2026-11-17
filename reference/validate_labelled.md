@@ -1,6 +1,6 @@
-# Title
+# Validate a labelled vector
 
-Title
+Compatibility helper. Validation follows the public haven constructor.
 
 ## Usage
 
@@ -12,15 +12,8 @@ validate_labelled(x)
 
 - x:
 
-  an object with a labels attribute
+  A labelled vector.
 
 ## Value
 
-the same object
-
-## Examples
-
-``` r
-NULL
-#> NULL
-```
+The validated vector.

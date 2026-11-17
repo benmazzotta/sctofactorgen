@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="index.html">sctofactorgen</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +17,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="articles/sctofactorgen.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json"></form></li>
       </ul></div>
@@ -39,7 +40,7 @@
 </div>
 <div class="section level2">
 <h2 id="today-november-17-2026">Today: November 17, 2026<a class="anchor" aria-label="anchor" href="#today-november-17-2026"></a></h2>
-<p>First resolve <a href="https://github.com/benmazzotta/sctofactorgen/issues/10" class="external-link">#10: the credential-dependent pkgdown build</a> so documentation checks can run without server access.</p>
+<p><a href="https://github.com/benmazzotta/sctofactorgen/issues/10" class="external-link">#10: the credential-dependent pkgdown build</a> is resolved by merged PR #9; documentation builds no longer require server access.</p>
 <ol style="list-style-type: decimal"><li>Review the existing local maintenance work under <a href="https://github.com/benmazzotta/sctofactorgen/issues/2" class="external-link">#2</a>. Check the offline import and labelling workflow, preserve unrelated local edits, exclude credential/session files, and prepare the maintenance changes for review. Verify that repeated label text merging into a single factor level is documented.</li>
 <li>Implement <a href="https://github.com/benmazzotta/sctofactorgen/issues/3" class="external-link">#3: form validation</a>. Start with required columns and one shared select/list parser. Reject malformed codes and report unsupported layouts explicitly. Add offline regression cases.</li>
 <li>Run R CMD check including the vignette, obtain passing hosted CI, and validate a de-identified Excel form plus matching CSV export from a community account. If representative exports are unavailable, finish the synthetic checks and keep the real-export acceptance item open. Do not claim a release gate has passed.</li>
@@ -55,12 +56,12 @@
 </tr></thead><tbody><tr><td>0</td>
 <td><a href="https://github.com/benmazzotta/sctofactorgen/issues/10" class="external-link">#10 Offline pkgdown build and CI setup</a></td>
 <td>High</td>
-<td>Fix in PR #9; hosted verification pending</td>
+<td>Merged in PR #9; hosted check passed</td>
 <td>0.1.2</td>
 </tr><tr><td>1</td>
 <td><a href="https://github.com/benmazzotta/sctofactorgen/issues/2" class="external-link">#2 Offline maintenance baseline</a></td>
 <td>High</td>
-<td>Local implementation; review and verification pending</td>
+<td>Implemented on codex/offline-maintenance; review pending</td>
 <td>0.1.2</td>
 </tr><tr><td>2</td>
 <td><a href="https://github.com/benmazzotta/sctofactorgen/issues/1" class="external-link">#1 Reused labels</a></td>
@@ -112,7 +113,7 @@
 <li>Offline tests, installation and vignette build pass locally and in hosted CI.</li>
 <li>A representative de-identified community export pair is verified.</li>
 <li>Credential/session files are excluded from artifacts and public changes.</li>
-</ul><p>Current evidence from the local working tree: 23 passing assertions and full R CMD check with 0 errors, 0 warnings, one environment time-verification note. These are local results, not evidence of a merged release or live API compatibility. Schema validation and real-export verification are still pending.</p>
+</ul><p>Current evidence from the local working tree: 23 passing assertions and full R CMD check with 0 errors, 0 warnings and 0 notes (remote clock verification disabled). Optional rsurveycto was unavailable locally; API behavior is unverified. These are local results, not evidence of a merged release or live API compatibility. Schema validation and real-export verification are still pending.</p>
 </div>
 <div class="section level3">
 <h3 id="id_020-broader-local-export-support">0.2.0: broader local export support<a class="anchor" aria-label="anchor" href="#id_020-broader-local-export-support"></a></h3>

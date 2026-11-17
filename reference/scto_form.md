@@ -7,7 +7,7 @@ via API. This form is a wrapper for
 ## Usage
 
 ``` r
-scto_form(.formid, .auth = auth)
+scto_form(.formid, .auth)
 ```
 
 ## Arguments

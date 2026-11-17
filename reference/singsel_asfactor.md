@@ -22,10 +22,12 @@ singsel_asfactor(surveydata, thefields, thechoices)
 
   a tibble with choices as processed by `read_choices`
 
+  Duplicate display labels become a single factor level, as in base R.
+  Unknown response codes produce an error.
+
 ## Value
 
-a tibble with survey data where single select variables have variable
-labels in the `label` attribute
+Survey data with single select factors in form choice order.
 
 ## Examples
 

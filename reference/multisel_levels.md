@@ -1,6 +1,6 @@
-# Convert multi select variables to factors
+# Convert expanded multi select indicators
 
-Convert multi select variables to factors
+Convert expanded multi select indicators
 
 ## Usage
 
@@ -28,8 +28,8 @@ multisel_levels(surveydata, thefields, thechoices, na_value = "zero")
 
 ## Value
 
-a tibble with survey data where single select variables have variable
-labels in the `label` attribute
+Survey data with integer or logical multiselect indicators, preserving
+variable labels.
 
 ## Examples
 

@@ -8,6 +8,7 @@
 <url><loc>https://benmazzotta.github.io/sctofactorgen/articles/sctofactorgen.html</loc></url>
 <url><loc>https://benmazzotta.github.io/sctofactorgen/authors.html</loc></url>
 <url><loc>https://benmazzotta.github.io/sctofactorgen/index.html</loc></url>
+<url><loc>https://benmazzotta.github.io/sctofactorgen/news/index.html</loc></url>
 <url><loc>https://benmazzotta.github.io/sctofactorgen/reference/check_scto_api.html</loc></url>
 <url><loc>https://benmazzotta.github.io/sctofactorgen/reference/index.html</loc></url>
 <url><loc>https://benmazzotta.github.io/sctofactorgen/reference/multisel_label.html</loc></url>
@@ -16,6 +17,8 @@
 <url><loc>https://benmazzotta.github.io/sctofactorgen/reference/read_choices.html</loc></url>
 <url><loc>https://benmazzotta.github.io/sctofactorgen/reference/read_questions.html</loc></url>
 <url><loc>https://benmazzotta.github.io/sctofactorgen/reference/scto_form.html</loc></url>
+<url><loc>https://benmazzotta.github.io/sctofactorgen/reference/scto_read_csv.html</loc></url>
+<url><loc>https://benmazzotta.github.io/sctofactorgen/reference/scto_read_form.html</loc></url>
 <url><loc>https://benmazzotta.github.io/sctofactorgen/reference/scto_responses.html</loc></url>
 <url><loc>https://benmazzotta.github.io/sctofactorgen/reference/singsel_asfactor.html</loc></url>
 <url><loc>https://benmazzotta.github.io/sctofactorgen/reference/singsel_label.html</loc></url>

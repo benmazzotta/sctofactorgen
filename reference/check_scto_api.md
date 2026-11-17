@@ -5,7 +5,7 @@ Check the SurveyCTO API has been authorized and stored as `auth`
 ## Usage
 
 ``` r
-check_scto_api(.auth = auth)
+check_scto_api(.auth = NULL)
 ```
 
 ## Arguments

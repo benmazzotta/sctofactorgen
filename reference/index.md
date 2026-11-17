@@ -11,7 +11,7 @@
   : Apply variable labels to multiselects
 
 - [`multisel_levels()`](https://benmazzotta.github.io/sctofactorgen/reference/multisel_levels.md)
-  : Convert multi select variables to factors
+  : Convert expanded multi select indicators
 
 - [`read_choices()`](https://benmazzotta.github.io/sctofactorgen/reference/read_choices.md)
   : Extract response choices from a form definition
@@ -21,6 +21,12 @@
 
 - [`scto_form()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_form.md)
   : Get survey forms
+
+- [`scto_read_csv()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_read_csv.md)
+  : Read downloaded SurveyCTO responses
+
+- [`scto_read_form()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_read_form.md)
+  : Read a downloaded SurveyCTO form
 
 - [`scto_responses()`](https://benmazzotta.github.io/sctofactorgen/reference/scto_responses.md)
   : Get survey data
@@ -32,4 +38,4 @@
   : Label single select questions
 
 - [`validate_labelled()`](https://benmazzotta.github.io/sctofactorgen/reference/validate_labelled.md)
-  : Title
+  : Validate a labelled vector

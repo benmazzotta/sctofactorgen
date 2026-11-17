@@ -5,9 +5,9 @@ multiple columns. This function applies one label to each column,
 indicating both the question text (label) and response (label). These
 character strings are concatenated with a tilde `~` separator. To do
 this, we process the labels first and then apply them to the columns of
-the response data. At some point, I would like to have the ability to
-provide the user the choice whether these are dummy variables `{0,1}`,
-missing values, `{NA, 1}`, or booleans `{F, T}`.
+the response data. Use
+[`multisel_levels()`](https://benmazzotta.github.io/sctofactorgen/reference/multisel_levels.md)
+to choose integer, logical, or missing-preserving indicators.
 
 ## Usage
 
